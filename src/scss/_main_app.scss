@@ -1,0 +1,33 @@
+@import "./components/countdown";
+@import "./components/level";
+@import "./components/recognise";
+@import "./components/results";
+@import "./components/error";
+
+.main {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    overflow-x: hidden;
+    article {
+        width: 100%;
+        min-height: 100%;
+        position: absolute;
+    }
+    &.--level-2 article {
+        $col: $tertiary;
+        background-color: $col;
+        button.--fill {
+            color: $col;
+        }
+    }
+    &.--level-3 article {
+        $col: $fourth;
+        background-color: $col;
+        button.--fill {
+            color: $col;
+        }
+    }
+}

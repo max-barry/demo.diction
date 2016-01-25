@@ -1,0 +1,92 @@
+.wrap {
+    margin: 0 auto;
+    max-width: 640px;
+    position: relative;
+}
+
+button {
+    box-shadow: none;
+    border: 1px solid $primary;
+    background-color: transparent;
+    color: $primary;
+    min-width: 6*$blh;
+    display: inline-block;
+    text-transform: uppercase;
+    padding: 0.5*$blh;
+    outline: 0;
+    font-family: $heavy-font-family;
+    .--flex &:not(.--floor) {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+    &.--fill {
+        color: $secondary;
+        background-color: $primary;
+    }
+}
+
+.--flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.--title {
+    $w: 14px;
+    margin: 0;
+    margin-bottom: $blh;
+    text-transform: uppercase;
+    color: $primary;
+    position: relative;
+    padding-left: $w*2;
+    &:before {
+        content: "";
+        position: absolute;
+        width: $w;
+        background-color: $dark;
+        // Tweaks because the font is funny
+        top: -3px;
+        bottom: 14px;
+        left: 0;
+    }
+}
+
+table {
+    $border: 1px solid $primary;
+    margin: 2*$blh auto;
+    tr:not(:last-child) {
+        border-bottom: $border;
+    }
+    tr:last-child td {
+        font-family: $heavy-font-family;
+    }
+    td {
+        font-family: $light-font-family;
+        padding: 0.5*$blh $blh;
+        min-width: 140px;
+        text-align: center;
+        &:first-child {
+            border-right: $border;
+            text-transform: uppercase;
+        }
+    }
+}
+
+main article {
+    padding: $blh;
+}
+
+hr {
+    max-width: 30px;
+    margin: 2*$blh auto;
+    border-width: 3px;
+}
+
+.--floor {
+    display: block;
+    margin: 0 auto;
+    position: absolute;
+    bottom: $blh;
+    left: 50%;
+    transform: translateX(-50%);
+}

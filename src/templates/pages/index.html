@@ -1,0 +1,17 @@
+{% extends "layouts/base.html" %}
+
+{% block initialState %}initial menu{% endblock %}
+
+{% block content %}
+    <article>
+        <h1 class="--title">Diction, my boy</h1>
+        <p>Choose a difficulty level, then read the script as fast and accurately as possible.</p>
+        <hr>
+        <button href="/level.html?level=1">Level 1</button>
+        <button href="/level.html?level=2">Level 2</button>
+        <button href="/level.html?level=3">Level 3</button>
+    </article>
+
+    <a class="signature" href="https://mxbry.com/?utm_source=demo&utm_medium=website&utm_campaign=diction">Made by Max</a>
+
+{% endblock %}

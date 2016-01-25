@@ -1,0 +1,64 @@
+{% extends "layouts/base.html" %}
+
+{% block initialState %}level main{% endblock %}
+{# {% block initialState %}results main{% endblock %} #}
+
+{% block content %}
+
+    {# ADD RETURN TO LEVEL SELECT BUTTONS TO RESULTS AND ERROR. STYLE RESULTS. USE A QUERY PARAM TO SET HIGH SCORE. SCORE = 1/TIME * accuracy #}
+
+    <article class="level">
+        <h1 class="level__title --title"></h1>
+        <div class="--flex level__controls">
+            <button class="--fill level__start --floor">Start</button>
+        </div>
+        {% include "./includes/leaderboard.html" %}
+    </article>
+
+    <article class="countdown__time"></article>
+
+    <article class="recognise">
+        <span class="recognise__text"></span>
+        <button class="recognise__stop --floor">Stop</button>
+    </article>
+
+    <article class="results">
+        <h1 class="results__title --title">Results</h1>
+        <div class="results__capture"></div>
+        <table>
+            <tr>
+                <td>Accuracy</td>
+                <td class="results__accuracy_target"><!----></td>
+            </tr>
+            <tr>
+                <td>Time</td>
+                <td class="results__time_target"><!----></td>
+            </tr>
+            <tr>
+                <td>Score</td>
+                <td class="results__score_target"><!----></td>
+            </tr>
+        </table>
+        <div class="results__control --flex">
+            <button class="retry --fill">Retry</button>
+            <button href="/">Levels</button>
+        </div>
+        {% include "./includes/leaderboard.html" %}
+        <button class="results__add">Add to Leaderboard</button>
+    </article>
+
+    <article class="error">
+        <h1 class="--title">Error</h1>
+        <p>If the microphone turned on and off quickly, just retry. There is some bug in Chrome.</p>
+        <div class="error__controls --flex">
+            <button class="retry --fill">Retry</button>
+            <button href="/">Levels</button>
+        </div>
+        <p>Error reported:<br><span class="error__err"></span></p>
+    </article>
+
+{% endblock %}
+
+{% block extrajs %}
+<script src="/js/main.js"></script>
+{% endblock %}

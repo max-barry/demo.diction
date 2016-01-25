@@ -1,0 +1,34 @@
+.leaderboard {
+    max-height: 50vh;
+    overflow: scroll;
+    ol {
+        counter-reset: leaders;
+    }
+    li {
+        position: relative;
+        font-size: $blh;
+        line-height: 1;
+        margin-bottom: $blh;
+        padding-bottom: $blh;
+        font-family: $display-font-family;
+        &:not(:last-child) {
+            border-bottom: 1px solid $primary;
+        }
+    }
+    li:before {
+        counter-increment: leaders;
+        content: counter(leaders);
+        margin-right: $blh;
+        width: $blh;
+        display: inline-block;
+    }
+    li:first-child:before {
+        content: "\1F451";
+    }
+    li:after {
+        content: attr(data-score);
+        position: absolute;
+        right: 0;
+        font-family: $light-font-family;
+    }
+}

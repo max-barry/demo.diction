@@ -1,0 +1,27 @@
+main:not(.state-results) {
+    .results {
+        display: none;
+    }
+}
+
+.results__capture {
+    font-family: $light-font-family;
+}
+
+.results .leaderboard {
+    max-height: none;
+    overflow: auto;
+    ol li:nth-child(3) {
+        border-bottom: 0px;
+        margin-bottom: 0;
+        padding-bottom: 0;
+    }
+    ol li:nth-child(n+4) {
+        display: none;
+    }
+}
+
+.results__add {
+    margin: $blh auto 0 auto;
+    display: block;
+}

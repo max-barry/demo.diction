@@ -1,0 +1,38 @@
+main:not(.state-countdown) {
+    .countdown__time {
+        display: none;
+    }
+}
+
+.countdown__time {
+    &:after {
+        content: "";
+        display: block;
+        font-size: 360px;
+        text-align: center;
+        line-height: calc(100vh - #{2*$blh});
+        color: $primary;
+        font-family: $display-font-family;
+    }
+}
+
+.state-countdown {
+    .countdown__time {
+        &:after {
+            animation: startCountdown 3s steps(3);
+            animation-fill-mode: forwards;
+        }
+    }
+}
+
+@include keyframes(startCountdown) {
+    0% {
+        content: "3";
+    }
+    50% {
+        content: "2";
+    }
+    100% {
+        content: "1";
+    }
+};

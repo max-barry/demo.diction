@@ -1,0 +1,12 @@
+main:not(.state-recognise) {
+    .recognise {
+        display: none;
+    }
+}
+
+.recognise__text {
+    font-family: $base-font-family;
+    line-height: 1.2;
+    font-size: 2*$blh;
+    color: $primary;
+}

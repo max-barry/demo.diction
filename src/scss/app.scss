@@ -1,0 +1,58 @@
+/**
+Vendor
+*/
+@import "reset";
+@import "bourbon";
+@import "scut";
+
+/**
+Functions
+*/
+@import "math";
+
+/**
+Settings & variables
+*/
+@import "settings";
+@import "typography";
+
+/**
+Custom resets
+*/
+html, body {
+    color: $primary;
+}
+
+html {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: $secondary;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+/**
+App shared components
+*/
+@import "./components/leaderboard";
+
+/**
+App pages
+*/
+@import "global";
+@import "main_app";
+@import "menu_app";
+
+.signature {
+    position: fixed;
+    bottom: $blh;
+    right: $blh;
+    color: $primary;
+    &:visited {
+        color: $primary;
+    }
+}

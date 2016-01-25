@@ -1,0 +1,8 @@
+main:not(.state-level) .level {
+    will-change: transform;
+    transform: translateX(100%);
+}
+
+// .state-level .level {
+    // transform: none;
+// }
